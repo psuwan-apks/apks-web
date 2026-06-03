@@ -255,6 +255,19 @@ $view = $view ?? '';
                 });
             }
 
+            // Expand sidebar if collapsed and a collapsible menu is clicked
+            if (sidebar) {
+                sidebar.addEventListener('click', function(e) {
+                    if (!isMobile() && sidebar.classList.contains('collapsed')) {
+                        const collapseToggle = e.target.closest('[data-bs-toggle="collapse"]');
+                        if (collapseToggle) {
+                            sidebar.classList.remove('collapsed');
+                            localStorage.setItem('sidebar-state', 'expanded');
+                        }
+                    }
+                });
+            }
+
             // Mobile: click mobile topbar logo to open sidebar
             if (mobileLogo && sidebar) {
                 mobileLogo.addEventListener('click', function(e) {
