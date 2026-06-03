@@ -394,3 +394,8 @@
 .sidebar.collapsed .collapse {
     display: none !important;
 }
+
+/* Hide caret arrow when sidebar is collapsed to prevent overlapping with the icon */
+.sidebar.collapsed .caret {
+    display: none !important;
+}
