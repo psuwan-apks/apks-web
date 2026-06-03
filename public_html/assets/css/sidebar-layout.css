@@ -4,13 +4,17 @@
     height: 100vh;
     overflow: hidden;
 }
+
 /* Sidebar positioning */
 .wrapper[data-sidebar-position="right"] .sidebar {
-    order: 2; /* move to right */
+    order: 2;
+    /* move to right */
 }
+
 .wrapper[data-sidebar-position="left"] .sidebar {
     order: 0;
 }
+
 /* Sidebar base width */
 .sidebar {
     width: 250px;
@@ -23,14 +27,17 @@
     position: relative;
     z-index: 10;
 }
+
 /* Collapsed state */
 .sidebar.collapsed {
     width: 80px;
 }
+
 /* Temporarily expanded state on hover */
 .sidebar.collapsed.hover-expanded {
     width: 250px;
 }
+
 /* Main panel takes remaining space */
 .main-panel {
     flex: 1;
@@ -38,17 +45,19 @@
     padding: 20px;
     overflow-y: auto;
 }
+
 /* Logo styling */
 .logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 12px 1rem;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     box-sizing: border-box;
     width: 100%;
 }
+
 .logo-mini {
     display: inline-flex;
     align-items: center;
@@ -59,6 +68,7 @@
     flex-shrink: 0;
     text-decoration: none;
 }
+
 .logo-image-small {
     display: flex;
     align-items: center;
@@ -66,10 +76,12 @@
     width: 32px;
     height: 32px;
 }
+
 .logo-image-small img {
     max-width: 100%;
     max-height: 100%;
 }
+
 .logo-normal {
     font-weight: bold;
     color: #000000;
@@ -83,9 +95,11 @@
     font-size: 1.2rem;
     color: #000000;
 }
+
 .sidebar.collapsed .logo:hover .logo-img {
     display: none;
 }
+
 .sidebar.collapsed .logo:hover .logo-icon {
     display: inline-flex;
 }
@@ -101,9 +115,11 @@
     border-radius: 4px;
     transition: background 0.3s;
 }
+
 .sidebar:not(.collapsed) .logo .sidebar-collapse-btn {
     display: inline-flex;
 }
+
 .logo .sidebar-collapse-btn:hover {
     background: rgba(0, 0, 0, 0.08);
 }
@@ -114,6 +130,7 @@
 .sidebar.collapsed .sidebar-wrapper p {
     display: none;
 }
+
 /* Hide text in logo when collapsed */
 .sidebar.collapsed .logo .logo-normal {
     display: none;
@@ -132,6 +149,7 @@
     flex-shrink: 0;
     color: inherit;
 }
+
 .sidebar .sidebar-wrapper .sidebar-mini-icon {
     font-size: 0.9rem;
     font-weight: bold;
@@ -144,6 +162,7 @@
     display: flex;
     flex-direction: column;
 }
+
 /* Enhanced Sidebar Styling */
 .nav li {
     list-style: none;
@@ -154,29 +173,36 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: calc(100% - 16px);
+    margin: 4px 8px;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    transition: background 0.5s;
-    height: 48px;
+    transition: background 0.3s, color 0.3s;
+    height: 40px;
     box-sizing: border-box;
     position: relative;
+    border-radius: 20px;
 }
+
 .nav-link:hover {
     background: rgba(0, 0, 0, 0.06);
     color: #000000;
     text-decoration: none;
 }
-.nav-link.active, .nav-item.active > .nav-link {
+
+.nav-link.active,
+.nav-item.active>.nav-link {
     background: rgba(0, 0, 0, 0.08);
     color: #000000;
     font-weight: bold;
 }
+
 .sidebar .nav {
     padding-left: 0;
     margin-bottom: 0;
     width: 100%;
 }
+
 .nav-link p {
     margin: 0;
     flex: 1;
@@ -187,10 +213,12 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
 .sidebar-normal {
     white-space: nowrap;
     overflow: hidden;
 }
+
 .caret {
     display: inline-block;
     width: 0;
@@ -204,6 +232,7 @@
     transition: transform 0.4s ease;
     pointer-events: none;
 }
+
 .nav-link:not(.collapsed) .caret {
     transform: rotate(180deg);
 }
@@ -229,6 +258,7 @@
    Mobile Responsive (≤768px)
    ============================ */
 @media (max-width: 768px) {
+
     /* Wrapper becomes vertical on mobile */
     .wrapper {
         flex-direction: column;
@@ -248,6 +278,7 @@
         box-sizing: border-box;
         flex-shrink: 0;
     }
+
     .mobile-logo {
         display: inline-flex;
         align-items: center;
@@ -258,6 +289,7 @@
         text-decoration: none;
         margin-right: 0.5rem;
     }
+
     .mobile-logo-image {
         width: 32px;
         height: 32px;
@@ -265,23 +297,28 @@
         align-items: center;
         justify-content: center;
     }
+
     .mobile-logo-img {
         width: 32px;
         max-width: 100%;
         max-height: 100%;
     }
+
     .mobile-logo-icon {
         display: none;
         font-size: 1.2rem;
         color: #000000;
     }
+
     /* Hover swap: show expand icon on hover */
     .mobile-logo:hover .mobile-logo-img {
         display: none;
     }
+
     .mobile-logo:hover .mobile-logo-icon {
         display: inline-flex;
     }
+
     .mobile-app-name {
         font-weight: bold;
         color: #000000;
@@ -300,24 +337,29 @@
         transition: left 0.3s ease;
         box-shadow: none;
     }
+
     /* Override collapsed width on mobile */
     .sidebar.collapsed {
         width: 250px !important;
         left: -260px;
     }
+
     /* Show all text labels on mobile (override collapsed hiding) */
     .sidebar.mobile-open .sidebar-wrapper .sidebar-normal,
     .sidebar.mobile-open .sidebar-wrapper p,
     .sidebar.mobile-open .logo .logo-normal {
         display: flex !important;
     }
+
     /* Hide expand icon in sidebar logo on mobile */
     .sidebar.mobile-open .logo .logo-icon {
         display: none !important;
     }
+
     .sidebar.mobile-open .logo .logo-img {
         display: inline !important;
     }
+
     /* Show collapse button on mobile when open */
     .sidebar.mobile-open .logo .sidebar-collapse-btn {
         display: inline-flex !important;
