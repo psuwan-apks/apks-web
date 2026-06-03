@@ -168,19 +168,19 @@
     list-style: none;
     width: 100%;
 }
+
 .nav-link {
     color: #000000;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: calc(100% - 16px);
-    margin: 4px 8px;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.5s;
     height: 40px;
     box-sizing: border-box;
     position: relative;
+    margin: 4px 12px;
     border-radius: 20px;
 }
 
