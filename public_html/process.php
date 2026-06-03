@@ -22,6 +22,22 @@ $cmd2Process = get("CMD2PROCESS");
 
 switch ($cmd2Process):
 
+    case 'LANGUAGE_SET':
+        // Read JSON body from the fetch request
+        $input = json_decode(file_get_contents('php://input'), true);
+        $lang = $input['language'] ?? '';
+
+        // Validate: only allow known language codes
+        $allowed = ['en', 'th'];
+        if (in_array($lang, $allowed, true)) {
+            $_SESSION['LANGUAGE'] = $lang;
+            echo json_encode(['status' => 'success', 'language' => $lang]);
+        } else {
+            http_response_code(400);
+            echo json_encode(['status' => 'error', 'message' => 'Invalid language']);
+        }
+        break;
+
         // Default CMD2PROCESS
     default:
         echo json_encode(['status' => 'error', 'message' => 'No command to process']);

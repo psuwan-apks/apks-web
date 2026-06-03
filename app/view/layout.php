@@ -124,14 +124,14 @@ $view = $view ?? '';
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-2 py-2 rounded-3" aria-labelledby="mobileLanguageDropdown" style="min-width: 120px;">
                         <li>
-                            <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 <?php echo $lang === 'th' ? 'active' : ''; ?>" 
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 lang-item <?php echo $lang === 'th' ? 'lang-active' : ''; ?>" 
                                href="#" onclick="changeLanguage('th'); return false;">
                                 <img src="./assets/images/flag-th.png" alt="Thai" style="width: 18px; height: 12px; border-radius: 1px; object-fit: cover;">
                                 <span class="small fw-medium">ไทย</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 <?php echo $lang === 'en' ? 'active' : ''; ?>" 
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 lang-item <?php echo $lang === 'en' ? 'lang-active' : ''; ?>" 
                                href="#" onclick="changeLanguage('en'); return false;">
                                 <img src="./assets/images/flag-uk.png" alt="English" style="width: 18px; height: 12px; border-radius: 1px; object-fit: cover;">
                                 <span class="small fw-medium">English</span>
@@ -197,15 +197,15 @@ $view = $view ?? '';
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-2 py-2 rounded-3" aria-labelledby="languageDropdown" style="min-width: 140px;">
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 <?php echo $lang === 'th' ? 'active' : ''; ?>" 
-                                       href="#" onclick="changeLanguage('th'); return false;" style="border-radius: 4px; margin: 0 6px;">
+                                    <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 lang-item <?php echo $lang === 'th' ? 'lang-active' : ''; ?>" 
+                                       href="#" onclick="changeLanguage('th'); return false;">
                                         <img src="./assets/images/flag-th.png" alt="Thai" style="width: 18px; height: 12px; border-radius: 1px; object-fit: cover;">
                                         <span class="small fw-medium">ไทย</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 <?php echo $lang === 'en' ? 'active' : ''; ?>" 
-                                       href="#" onclick="changeLanguage('en'); return false;" style="border-radius: 4px; margin: 0 6px;">
+                                    <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-3 lang-item <?php echo $lang === 'en' ? 'lang-active' : ''; ?>" 
+                                       href="#" onclick="changeLanguage('en'); return false;">
                                         <img src="./assets/images/flag-uk.png" alt="English" style="width: 18px; height: 12px; border-radius: 1px; object-fit: cover;">
                                         <span class="small fw-medium">English</span>
                                     </a>

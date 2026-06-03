@@ -399,3 +399,23 @@
 .sidebar.collapsed .caret {
     right: 8px;
 }
+
+/* Language dropdown item – capsule highlight matching sidebar */
+.lang-item {
+    border-radius: 20px !important;
+    margin: 2px 6px !important;
+    transition: background 0.3s ease;
+}
+
+.lang-item:hover {
+    background: rgba(0, 0, 0, 0.06) !important;
+    color: #000000 !important;
+}
+
+.lang-item.lang-active,
+.lang-item.lang-active:hover,
+.lang-item.lang-active:focus {
+    background: rgba(0, 0, 0, 0.08) !important;
+    color: #000000 !important;
+    font-weight: bold;
+}
