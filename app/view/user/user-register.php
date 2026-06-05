@@ -8,21 +8,31 @@ require_once __DIR__ . '/../../model/user.php';
 
 $error = '';
 $success = '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
+    $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm'] ?? '';
-    if ($password !== $confirm) {
+
+    if ($username === '' || $password === '') {
+        $error = 'Username and password are required.';
+    } elseif ($password !== $confirm) {
         $error = 'Passwords do not match.';
     } else {
         $created = User::createUser($username, $password);
         if ($created) {
+            // Log successful registration
+            log_event('user_register', 'success', 'User registered successfully: ' . $username, $username);
+
             // Log the user in
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
+            $_SESSION['USER'] = ['username' => $username];
             header('Location: ../../index.php');
             exit;
         } else {
+            // Log registration failure (username already exists)
+            log_event('user_register', 'failure', 'Registration failed: Username already exists: ' . $username, $username);
             $error = 'Username already exists.';
         }
     }
